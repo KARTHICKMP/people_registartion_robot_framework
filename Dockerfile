@@ -20,8 +20,7 @@ RUN wget -q https://github.com/mozilla/geckodriver/releases/download/v0.24.0/gec
 	&& chmod a+x /usr/local/bin/geckodriver
 # install chrome and chromedriver in one run command to clear build caches for new versions (both version need to match)
 RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && apt-get install libcurl3 \
-    && apt --fix-broken install \
+    && apt-get install -f \
 	&& dpkg -i google-chrome*.deb \
 	&& rm google-chrome*.deb \
     && wget -q https://chromedriver.storage.googleapis.com/92.0.4515.43/chromedriver_linux64.zip \
