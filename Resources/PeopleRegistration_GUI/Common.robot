@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${URL} =  http://www.localhost:8081
-${BROSWER} =  chrome
+${BROSWER} =  firefox
 
 *** Keywords ***
 Begin web test

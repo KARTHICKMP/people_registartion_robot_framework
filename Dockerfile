@@ -30,4 +30,4 @@ RUN wget -q https://github.com/mozilla/geckodriver/releases/download/v0.24.0/gec
 #    chmod +x /opt/chromedriver/chromedriver && \
 #    ln -fs /opt/chromedriver/chromedriver /usr/local/bin/chromedriver
 
-ENTRYPOINT ['/run_tests.sh']
+ENTRYPOINT ['run_tests.sh']
