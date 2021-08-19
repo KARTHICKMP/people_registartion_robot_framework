@@ -18,16 +18,16 @@ RUN wget -q https://github.com/mozilla/geckodriver/releases/download/v0.24.0/gec
 	&& rm geckodriver-*.tar.gz \
 	&& mv geckodriver /usr/local/bin \
 	&& chmod a+x /usr/local/bin/geckodriver
-# install chrome and chromedriver in one run command to clear build caches for new versions (both version need to match)
-RUN wget -no-verbose https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-RUN dpkg -install google-chrome-stable_current_amd64.deb; apt-get -fix-broken -assume-yes install
-
-RUN wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE && \
-    wget /tmp/chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/92.0.4515.43/chromedriver_linux64.zip && \
-    apt-get install unzip && \
-    unzip -qq /tmp/chromedriver_linux64.zip -d /opt/chromedriver && \
-    chmod +x /opt/chromedriver/chromedriver && \
-    ln -fs /opt/chromedriver/chromedriver /usr/local/bin/chromedriver
+## install chrome and chromedriver in one run command to clear build caches for new versions (both version need to match)
+#RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#
+#RUN dpkg -install google-chrome-stable_current_amd64.deb; apt-get -fix-broken -assume-yes install
+#
+#RUN wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE && \
+#    wget /tmp/chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/92.0.4515.43/chromedriver_linux64.zip && \
+#    apt-get install unzip && \
+#    unzip -qq /tmp/chromedriver_linux64.zip -d /opt/chromedriver && \
+#    chmod +x /opt/chromedriver/chromedriver && \
+#    ln -fs /opt/chromedriver/chromedriver /usr/local/bin/chromedriver
 
 ENTRYPOINT ['/run_tests.sh']
