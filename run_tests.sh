@@ -1,1 +1,1 @@
-robot --variable BROWSER:chrome --outputdir results tests
+robot -d results Tests/PeopleRegistrationApp_GUI_REST_Test.robot
