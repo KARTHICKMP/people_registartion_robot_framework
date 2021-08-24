@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${URL} =  http://www.localhost:8081
-${BROSWER} =  firefox
+${BROSWER} =  headlessfirefox
 
 *** Keywords ***
 Begin web test

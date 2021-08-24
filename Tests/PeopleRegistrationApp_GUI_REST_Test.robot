@@ -19,7 +19,7 @@ Register new people via GUI and verify using REST API
     ${first_name} =  Set variable  Mahendra
     ${middle_name} =  Set variable  Pratap
     ${family_name} =  Set variable  Baahubali
-    ${dob} =  Set variable  15/02/1992
+    ${dob} =  Set variable  11/15/1992
     ${place_of_birth} =  Set variable  Uthara
     ${nationality} =  Set variable  India
     home_page.Verify "People Management page" is loaded
@@ -43,7 +43,7 @@ Register new people via GUI and verify using REST API
     Should Be Equal  ${poeple_info}[firstName]  ${first_name}
     Should Be Equal  ${poeple_info}[middleName]  ${middle_name}
     Should Be Equal  ${poeple_info}[familyName]  ${family_name}
-    ${date1} =  Convert Date  ${dob}  date_format=%d/%m/%Y
+    ${date1} =  Convert Date  ${dob}  date_format=%m/%d/%Y
     ${date2} =  Convert Date  ${poeple_info}[dOB]
     Should Be Equal  ${date1}  ${date2}
     Should Be Equal  ${poeple_info}[placeOfBirth]  ${place_of_birth}

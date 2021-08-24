@@ -34,7 +34,7 @@ Enter "Family Name"
 Enter "Date of Birth"
     [Arguments]  ${dob}
     [Documentation]  Enters "Date of Birth" in the text box
-    Input Text  ${DOB_ID}  ${dob}
+    Press keys  ${DOB_ID}  ${dob}
 
 Enter "Place of Birth"
     [Arguments]  ${birthplace}
